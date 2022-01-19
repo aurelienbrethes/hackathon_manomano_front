@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,EAAE,CAAC;EACC,KAAK,EAAE,GAAG;CACb",
+    "sources": [
+        "styles.scss",
+        "sass/bases/_bases.scss",
+        "sass/bases/_variables.scss",
+        "sass/pages/_home.scss",
+        "sass/layout/_header.scss",
+        "sass/layout/_orders.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}

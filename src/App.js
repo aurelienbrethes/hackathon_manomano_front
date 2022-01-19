@@ -1,6 +1,5 @@
-import "./App.css";
-import Home from "./components/home";
-import Orders from "./components/Orders";
+import Home from "./components/pages/home";
+import Orders from "./components/layout/Orders";
 
 function App() {
   return (
