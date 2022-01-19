@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './styles.css';
+import { ProductsContextProvider } from './contexts/Products';
+import './styles.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProductsContextProvider>
+      <App />
+    </ProductsContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
