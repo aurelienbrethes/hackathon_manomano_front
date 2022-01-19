@@ -1,4 +1,4 @@
-import Home from "./components/pages/home";
+import Home from "./components/pages/Home";
 import Orders from "./components/layout/Orders";
 
 function App() {

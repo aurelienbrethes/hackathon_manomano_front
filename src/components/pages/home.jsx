@@ -1,11 +1,13 @@
-import Header from "../layout/header";
+import Navbar from "../layout/Navbar";
+import Header from "../layout/Header";
 
 const Home = () => {
-    return (
-        <div>
-            <Header />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Navbar />
+      <Header />
+    </div>
+  );
+};
 
 export default Home;
