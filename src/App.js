@@ -2,7 +2,6 @@ import Home from './components/pages/Home';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/layout/Navbar/Navbar';
 
-
 function App() {
   return (
     <div className="App">
