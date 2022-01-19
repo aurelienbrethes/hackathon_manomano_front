@@ -1,7 +1,9 @@
+import Header from "../layout/header";
+
 const Home = () => {
     return (
         <div>
-            Ce site fonctionne
+            <Header />
         </div>
     )
 }
