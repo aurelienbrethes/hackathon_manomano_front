@@ -6,13 +6,23 @@
   margin-right: auto;
   font-size: 1.5em;
   background-color: grayscale;
+  margin-bottom: 5em;
+
+  &__title {
+    color: rgb(27, 27, 141);
+    font-size: 2em;
+  }
+
+  &__subtitle {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
 
   &__headOrder {
     background-color: rgb(211, 205, 205);
     display: flex;
     justify-content: space-between;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 1em;
   }
 
   &__date {
@@ -29,14 +39,20 @@
     background-color: orange;
     color: rgb(27, 27, 141);
     border-radius: 10px;
+    border: none;
     height: 4vh;
     width: 10vw;
     font-size: 0.6em;
   }
 
+  &__totalTtc {
+    font-weight: bold;
+  }
+
   &__facture {
     display: flex;
     align-items: center;
+    font-weight: bold;
 
     img {
       height: 4vh;
