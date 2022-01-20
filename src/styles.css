@@ -327,5 +327,8 @@ h1 * {
   border: none;
   background-color: white;
 }
+.cart-product__priceHT {
+  font-size: 20px;
+}
 
 /*# sourceMappingURL=styles.css.map */
