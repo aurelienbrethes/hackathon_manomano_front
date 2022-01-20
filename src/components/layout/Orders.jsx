@@ -35,9 +35,6 @@ const Orders = () => {
       {products.map((product, index) => (
         <ArticleOrder key={index} img={product.img} name={product.name} />
       ))}
-      <ArticleOrder />
-      <ArticleOrder />
-      <ArticleOrder />
     </div>
   );
 };
