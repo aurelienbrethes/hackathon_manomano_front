@@ -1,6 +1,9 @@
 import Home from './components/pages/Home';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/layout/Navbar/Navbar';
+// import Produits from './components/layout/Poduits';
+// import Comptes from './components/layout/Comptes';
+
 
 function App() {
   return (

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navlink = ({path, label, img, alt}) => {
+const Navlink = ({path, label, logo, alt}) => {
     return(
-        <div>
-            <Link className='hover:text-white' to={path}>
+        <li className='navlink'>
+            <Link className='navlink__link' to={path}>
+                <img className='navlink__link-logo' src={logo} alt={alt} />
                 {label}
-                <img src={img} alt={alt} />
             </Link>
-        </div>
+        </li>
     )
 }
 
