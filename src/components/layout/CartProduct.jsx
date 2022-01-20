@@ -14,6 +14,7 @@ const CartProduct = ({ name, price, img, quantity, setQuantity }) => {
           <p className="cart-product__delivery-date">
             entre vendredi 21 et lundi 24 janvier
           </p>
+
           <button className="cart-product__delete">Supprimer</button>
         </div>
       </div>

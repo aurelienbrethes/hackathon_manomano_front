@@ -327,8 +327,14 @@ h1 * {
   border: none;
   background-color: white;
 }
+.cart-product__delete:before {
+  content: "";
+  background-image: url("http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcR4MNVOIgd8B6O8Odx2HD5Gl39T6wPAgQ_vQu1sD_x9KJyCn3LsTpSPRPYIbbKt");
+}
 .cart-product__priceHT {
   font-size: 20px;
+  font-weight: 700;
+  color: #1b1b8d;
 }
 
 /*# sourceMappingURL=styles.css.map */
