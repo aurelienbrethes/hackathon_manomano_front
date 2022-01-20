@@ -1,9 +1,11 @@
 .most-purchased-products {
+  background-color: #f5f6f7;
+  padding-bottom: 5%;
   &__title {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 5% 0;
+    padding: 5% 0;
   }
 
   &__list {
