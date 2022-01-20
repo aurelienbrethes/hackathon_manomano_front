@@ -1,12 +1,13 @@
 {
     "version": 3,
-    "mappings": "ACAA,AAAA,EAAE,CAAC;EACD,KAAK,EAAE,IAAI;CACZ",
+    "mappings": "AKEK,AAAD,+BAAI,CAAC;EACH,OAAO,EAAE,IAAI;CACd",
     "sources": [
         "styles.scss",
         "sass/bases/_bases.scss",
         "sass/bases/_variables.scss",
         "sass/pages/_home.scss",
-        "sass/layout/_header.scss"
+        "sass/layout/_header.scss",
+        "sass/layout/_mostPurchasedProducts.scss"
     ],
     "names": [],
     "file": "styles.css"

@@ -2,6 +2,7 @@ import React, { createContext } from "react";
 
 const ProductsContext = createContext({
   products: [],
+  productsOnCart: [],
 });
 
 export const ProductsContextProvider = ({ children }) => {
@@ -58,10 +59,13 @@ export const ProductsContextProvider = ({ children }) => {
     },
   ];
 
+  const productsOnCart = [];
+
   return (
     <ProductsContext.Provider
       value={{
         products,
+        productsOnCart,
       }}
     >
       {children}
