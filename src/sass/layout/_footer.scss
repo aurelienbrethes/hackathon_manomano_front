@@ -1,0 +1,26 @@
+.footer {
+  width: 100%;
+  padding-top: 1%;
+  background-color: #505971;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__up {
+    display: flex;
+    justify-content: space-between;
+    background-color: #505971;
+    width: 60%;
+  }
+
+  &__down {
+    width: 100%;
+    background-color: #0c193a;
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+}
