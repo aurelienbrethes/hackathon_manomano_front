@@ -1,14 +1,13 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Open Sans, mm-main, arial, sans-serif;
 }
 
 h1 {
   font-size: 3em;
-  * {
-    margin: 0;
-    padding: 0;
-    background-color: #f5f6f7;
-  }
 }
 
+li {
+  list-style: none;
+}

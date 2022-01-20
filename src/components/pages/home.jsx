@@ -1,12 +1,12 @@
-import React from "react";
-import MostPurchasedProducts from "../layout/MostPurchasedProducts";
+import React from 'react';
+import AllProducts from '../layout/AllProducts';
 
 const Home = () => {
   return (
     <div>
-      <MostPurchasedProducts />
+      <AllProducts />
     </div>
-  );
+    )
 };
 
 export default Home;
