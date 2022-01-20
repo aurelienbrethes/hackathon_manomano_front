@@ -31,9 +31,15 @@
     border-radius: 10px;
     height: 4vh;
     width: 10vw;
+    font-size: 0.6em;
   }
 
   &__facture {
-    align-self: center;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 4vh;
+    }
   }
 }

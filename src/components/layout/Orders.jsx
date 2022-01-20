@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import ArticleOrder from "./ArticleOrder";
 import ProductsContext from "../../contexts/Products";
+import download from "../../ressources/download.png";
 
-const Orders = () => {
-  const { products } = useContext(ProductsContext);
+const Orders = ({ img, name }) => {
+  const { products, productsOnCart } = useContext(ProductsContext);
 
   return (
     <div className="orders">
@@ -21,12 +22,20 @@ const Orders = () => {
           <p className="orders__totalTtc">Total TTC : 85.65€</p>
         </div>
 
-        <div className="orders__facture">Factures</div>
+        <div className="orders__facture">
+          <img src={download} alt="Logo download" />
+          <p>Factures</p>
+        </div>
       </div>
 
       <div className="orders__paiementContainer">
         <div className="orders__paiement">Mode de paiement: Mastercard</div>
-        <button className="orders__btnAjouterTout">
+        <button
+          className="orders__btnAjouterTout"
+          onClick={() => {
+            productsOnCart.push({ img: img, name: name });
+          }}
+        >
           Tout ajouter au panier
         </button>
         <div className="orders__fraisLivraison">Frais de livraison: 14.50€</div>

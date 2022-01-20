@@ -3,7 +3,6 @@ import ProductsContext from "../../contexts/Products";
 
 const ArticleOrder = ({ img, name }) => {
   const { productsOnCart } = useContext(ProductsContext);
-  console.log(productsOnCart);
 
   return (
     <div className="articleOrder">
