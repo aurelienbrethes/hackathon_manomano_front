@@ -1,11 +1,9 @@
-import Navbar from "../layout/Navbar";
-import Header from "../layout/Header";
+import MostPurchasedProducts from "../layout/MostPurchasedProducts";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <Header />
+      <MostPurchasedProducts />
     </div>
   );
 };
