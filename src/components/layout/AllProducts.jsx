@@ -10,6 +10,10 @@ const AllProducts = () => {
         axios.get(`http://localhost:8000/api/products`).then((res) => setAllItems(res.data));
     }, []);
 
+    const purshase = (id) => {
+        setAllItems(id);
+    }
+
     return (
         <div className="allProducts">
             <p className="allProducts__page">Accueil {" > "} Outillage {" > "} Outillage électroportatif {" > "} <b>Perceuse, visseuse, perforateur, burineur, marteau-piqueur</b></p>
