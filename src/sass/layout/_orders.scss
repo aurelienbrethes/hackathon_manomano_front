@@ -1,0 +1,39 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5em;
+  background-color: grayscale;
+
+  &__headOrder {
+    background-color: rgb(211, 205, 205);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  &__date {
+    font-weight: bold;
+  }
+
+  &__paiementContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+  &__btnAjouterTout {
+    background-color: orange;
+    color: rgb(27, 27, 141);
+    border-radius: 10px;
+    height: 4vh;
+    width: 10vw;
+  }
+
+  &__facture {
+    align-self: center;
+  }
+}
