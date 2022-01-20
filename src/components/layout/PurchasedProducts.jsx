@@ -3,8 +3,7 @@ import ProductsContext from "../../contexts/Products";
 
 const PurchasedProducts = ({ img, name, price }) => {
   const { productsOnCart } = useContext(ProductsContext);
-  const [test, setTest] = useState(false);
-  console.log(productsOnCart);
+
   return (
     <div className="purchased-product">
       <div className="purchased-product__img">
@@ -20,7 +19,6 @@ const PurchasedProducts = ({ img, name, price }) => {
         <button
           onClick={() => {
             productsOnCart.push({ img: img, name: name, price: price });
-            setTest(!test);
           }}
         >
           Ajouter au panier
