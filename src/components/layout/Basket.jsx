@@ -41,15 +41,26 @@ const Basket = () => {
         </div>
       </div>
       <div className="basket__right">
-        <p>Total du panier HT</p>
-        <p>185.12€</p>
-        <p>222.14 € TTC</p>
-        <p>Total TVA des produits</p>
-        <p>37.02€</p>
-        <p>Frais de livraison TTC</p>
-        <p>4.90€</p>
-        <p>Total a payer TTC</p>
-        <p>227.04€</p>
+        <div className="basket__total__line">
+          <p className="basket__total__line__title">Total du panier HT</p>
+          <div className="basket__total__line__httc">
+            <p>185.12€</p>
+            <p className="basket__total__line__ttc">222.14 € TTC</p>
+          </div>
+        </div>
+
+        <div className="basket__total__line">
+          <p className="basket__total__line__title1">Total TVA des produits</p>
+          <p>37.02€</p>
+        </div>
+        <div className="basket__total__line">
+          <p className="basket__total__line__title1">Frais de livraison TTC</p>
+          <p>4.90€</p>
+        </div>
+        <div className="basket__total__line">
+          <p className="basket__total__line__title1">Total a payer TTC</p>
+          <p>227.04€</p>
+        </div>
         <button className="basket__button">Passer à la livraison</button>
 
         <img src={paiements} alt="" />
