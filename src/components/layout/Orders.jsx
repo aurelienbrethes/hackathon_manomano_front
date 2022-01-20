@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import ArticleOrder from "./ArticleOrder";
+import ProductsContext from "../../contexts/Products";
 
 const Orders = () => {
+  const { products } = useContext(ProductsContext);
+
   return (
     <div className="orders">
       <h1 className="orders__title">Mes achats</h1>
@@ -29,6 +32,9 @@ const Orders = () => {
         <div className="orders__fraisLivraison">Frais de livraison: 14.50€</div>
       </div>
 
+      {products.map((product, index) => (
+        <ArticleOrder key={index} img={product.img} name={product.name} />
+      ))}
       <ArticleOrder />
       <ArticleOrder />
       <ArticleOrder />

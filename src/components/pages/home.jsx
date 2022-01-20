@@ -1,13 +1,5 @@
-import Navbar from "../layout/Navbar";
-import Header from "../layout/Header";
-
 const Home = () => {
-  return (
-    <div>
-      <Navbar />
-      <Header />
-    </div>
-  );
+  return <div>{/* <MostPurchasedProducts /> */}</div>;
 };
 
 export default Home;
