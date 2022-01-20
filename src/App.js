@@ -1,9 +1,8 @@
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/layout/Navbar/Navbar';
+import MostPurchasedProducts from './components/layout/MostPurchasedProducts';
 import Home from "./components/pages/Home";
 import Orders from "./components/layout/Orders";
-import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/layout/Navbar/Navbar";
-// import Produits from './components/layout/Poduits';
-// import Comptes from './components/layout/Comptes';
 
 function App() {
   return (
@@ -12,11 +11,11 @@ function App() {
       <Orders /> */}
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-
-        <Route path="/comptes" element={<Orders />} />
-        {/* <Route path="/produits" element={<Produits />} /> */}
-        {/* <Route path="/comptes" element={<Comptes />} /> */}
+        <Route path="/" element={<Home />}>
+          <Route path="/navbar" element={<Navbar />} />
+          <Route path="/products" element={<MostPurchasedProducts />} />
+        </Route>
+        <Route path="/orders" element={<Orders />} />
       </Routes>
     </div>
   );
