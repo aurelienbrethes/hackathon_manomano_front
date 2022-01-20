@@ -9,7 +9,7 @@ import produit from '../../../ressources/produit_logo.png';
 const linkArray = [
     {
         label : "PRODUITS",
-        path : "/produits",
+        path : "/products",
         logo : produit,
         alt : "logo produits"
     },
