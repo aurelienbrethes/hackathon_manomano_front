@@ -1,0 +1,17 @@
+.navbar{
+    width: 100vw;
+    height: 200px;
+    background-image: url("../../ressources//bg_blue.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__list{
+        display: flex;
+        justify-content: space-around;
+        height: 8px;
+        padding-bottom: 10px;
+    }
+    img {
+        width: 250px;
+    }
+}
