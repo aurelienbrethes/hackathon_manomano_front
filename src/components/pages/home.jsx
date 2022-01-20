@@ -1,11 +1,13 @@
+import AllProducts from "../layout/AllProducts";
 import Navbar from "../layout/Navbar";
-import Header from "../layout/Header";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <Navbar />
-      <Header />
+      <div className="home__body">
+        <AllProducts />
+      </div>
     </div>
   );
 };
