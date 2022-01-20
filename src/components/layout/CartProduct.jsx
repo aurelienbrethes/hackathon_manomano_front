@@ -1,19 +1,21 @@
 import React from "react";
 
-const CartProduct = ({ name, price, image, quantity, setQuantity }) => {
+const CartProduct = ({ name, price, img, quantity, setQuantity }) => {
   return (
     <div className="cart-product">
-      <img alt="" src={image} className="cart-product__image" />
       <div className="cart-product__main">
-        <p className="cart-product__label">{name}</p>
-        <button className="cart-product__delete">Supprimer</button>
+        <img alt="" src={img} className="cart-product__image" />
+        <div className="cart-product__info">
+          <p className="cart-product__label">{name}</p>
 
-        <p className="cart-product__delivery-price">
-          livraison à partir de 4€90
-        </p>
-        <p className="cart-product__delivery-date">
-          entre vendredi 21 et lundi 24 janvier
-        </p>
+          <p className="cart-product__delivery-price">
+            livraison à partir de 4€90
+          </p>
+          <p className="cart-product__delivery-date">
+            entre vendredi 21 et lundi 24 janvier
+          </p>
+          <button className="cart-product__delete">Supprimer</button>
+        </div>
       </div>
       <div className="cart-product__qtyprice">
         <input
@@ -21,8 +23,12 @@ const CartProduct = ({ name, price, image, quantity, setQuantity }) => {
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
         ></input>
-        <p className="cart-product__priceTTC">{Math.round(price * 1.2)} TTC</p>
-        <p className="cart-product__priceHT">{price} HT</p>
+        <div>
+          <p className="cart-product__priceTTC">
+            {Math.round(price * 1.2)} TTC
+          </p>
+          <p className="cart-product__priceHT">{price} HT</p>
+        </div>
       </div>
     </div>
   );

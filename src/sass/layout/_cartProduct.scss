@@ -2,20 +2,37 @@
   display: flex;
   width: 100%;
   background-color: white;
-
+  margin: 30px;
+  justify-content: space-between;
   &__image {
     width: 100px;
     height: 100px;
   }
-
+  &__label {
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(27, 27, 141);
+  }
   &__main {
     display: flex;
+  }
+
+  &__info {
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+  }
+  &__delivery-date {
+    font-weight: 700;
   }
 
   &__qtyprice {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  &__delete {
+    border: none;
+    background-color: white;
   }
 }

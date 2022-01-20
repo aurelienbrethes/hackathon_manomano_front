@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import panier from "../../ressources/panier_logo.png";
 import paiements from "../../ressources/paiements.png";
 import CartProduct from "./CartProduct";
+import ProductsContext from "../../contexts/Products";
 
 const Cart = () => {
+  const { products } = useContext(ProductsContext);
+
   return (
     <div className="cart">
       <div className="cart__left">
@@ -18,6 +21,17 @@ const Cart = () => {
             <img src="" alt="" className="cart__products__pro" />
           </div>
           <button className="cart__button">Editer un devis</button>
+        </div>
+        <div className="cart__map">
+          {products.length &&
+            products.map((cartProduct, index) => (
+              <CartProduct
+                key={index}
+                img={cartProduct.img}
+                name={cartProduct.name}
+                price={cartProduct.price}
+              />
+            ))}
         </div>
         <div className="cart__bottom">
           <p className="cart__bottom__discount">

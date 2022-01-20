@@ -3,7 +3,8 @@ import Navbar from "./components/layout/Navbar/Navbar";
 import MostPurchasedProducts from "./components/layout/MostPurchasedProducts";
 import Home from "./components/pages/Home";
 import Orders from "./components/layout/Orders";
-import Basket from "./components/layout/Basket";
+
+import Cart from "./components/layout/Cart";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/products" element={<MostPurchasedProducts />} />
         </Route>
         <Route path="/orders" element={<Orders />} />
-        <Route path="/panier" element={<Basket />} />
+        <Route path="/panier" element={<Cart />} />
       </Routes>
     </div>
   );

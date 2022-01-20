@@ -17,7 +17,7 @@
     font-size: 18px;
     font-weight: 600;
     padding-bottom: 2px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 
     &__logo {
       width: 20px;
@@ -28,6 +28,7 @@
   &__products {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 
     &__display {
       display: flex;
