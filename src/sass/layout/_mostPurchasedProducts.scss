@@ -1,0 +1,14 @@
+.most-purchased-products {
+  &__title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

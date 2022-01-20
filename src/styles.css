@@ -1,4 +1,6 @@
-h1 {
-  color: red;
+.mostPurchasedProducts__list--1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=styles.css.map */

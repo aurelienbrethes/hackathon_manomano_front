@@ -1,13 +1,15 @@
 {
-    "version": 3,
-    "mappings": "ACAA,AAAA,EAAE,CAAC;EACC,KAAK,EAAE,GAAG;CACb",
-    "sources": [
-        "styles.scss",
-        "sass/bases/_bases.scss",
-        "sass/bases/_variables.scss",
-        "sass/pages/_home.scss",
-        "sass/layout/_header.scss"
-    ],
-    "names": [],
-    "file": "styles.css"
+  "version": 3,
+  "mappings": "AKEK,AAAD,+BAAI,CAAC;EACH,OAAO,EAAE,IAAI;CACd",
+  "sources": [
+    "styles.scss",
+    "sass/bases/_bases.scss",
+    "sass/bases/_variables.scss",
+    "sass/pages/_home.scss",
+    "sass/layout/_header.scss",
+    "sass/layout/_orders.scss",
+    "sass/layout/_mostPurchasedProducts.scss"
+  ],
+  "names": [],
+  "file": "styles.css"
 }

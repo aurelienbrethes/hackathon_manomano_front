@@ -1,3 +1,14 @@
-h1 {
-    color: red;
+* {
+  margin: 0;
+  padding: 0;
 }
+
+h1 {
+  font-size: 3em;
+  * {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6f7;
+  }
+}
+

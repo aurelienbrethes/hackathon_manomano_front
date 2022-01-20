@@ -1,0 +1,19 @@
+.navlink{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        color: white;
+        text-decoration: none;
+        img {
+            width: 30px;
+            padding-right: 10px;
+        }
+    };
+}
