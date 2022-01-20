@@ -1,11 +1,46 @@
 .navbar{
+    
     width: 100vw;
     height: 150px;
     background-image: url("../../ressources//bg_blue.png");
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 50px;
+
+    &__top{
+        display: flex;
+        justify-content: space-between;
+
+        &-contactContainer {
+
+            display: flex;
+        
+            &-sideContact{
+                width: 0;
+                height: 0;            
+                border-bottom: 60px solid transparent;            
+                border-right: 20px solid #ec7253;
+            }
+
+            &-contact{
+                
+                background: linear-gradient(90deg, #ec7253, #e7b548);;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 500px;
+                
+                p {
+                    color: white;
+                    span {
+                        color: black;
+                        font-weight: bold;
+                    }
+                }
+            }        
+        }
+    }
+
     &__list{
         display: flex;
         justify-content: space-around;

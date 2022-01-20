@@ -1,3 +1,4 @@
+
 import Navlink from './Navlink';
 import logo from '../../../ressources/logo_manomano.png';
 import comptes from '../../../ressources/comptes_logo.png';
@@ -21,8 +22,8 @@ const linkArray = [
         alt : "commandes logo"
     },
     {
-        label : "MES LISTES",
-        path : "",
+        label : "MES FAVORIS",
+        path : "/favoris",
         logo : favoris,
         alt : "logo listes"
     },
@@ -34,7 +35,7 @@ const linkArray = [
     },
     {
         label : "PANIER",
-        path : "",
+        path : "/basket",
         logo : panier,
         alt : "logo panier"
     }
@@ -43,9 +44,17 @@ const linkArray = [
 const Navbar = () => {
     return(
         <div className='navbar'>
-            <Link to="/">
-                <img src={logo} alt="manomano logo" />
-            </Link>
+            <div className='navbar__top'>
+                <Link to="/">
+                    <img src={logo} alt="manomano logo" />
+                </Link>
+                <div className='navbar__top-contactContainer'>
+                    <div className='navbar__top-contactContainer-sideContact'></div>
+                    <div className='navbar__top-contactContainer-contact'>
+                        <p>Contactez vos conseillers pros <br /> du lundi au vendredi de 8h à 20h au <span>01 75 85 01 70</span></p> 
+                    </div>
+                </div>           
+            </div>            
             <nav>
                 <ul className='navbar__list'>
                     {linkArray && linkArray.map((e, i) =>
@@ -62,5 +71,6 @@ const Navbar = () => {
         </div>
     )
 }
+
 
 export default Navbar;
