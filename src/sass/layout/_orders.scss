@@ -1,25 +1,39 @@
 .orders {
   display: flex;
   flex-direction: column;
+  width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5em;
+  background-color: grayscale;
 
   &__headOrder {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 2fr 2fr 1fr;
-  }
-
-  &__dateTitle {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
+    background-color: rgb(211, 205, 205);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
   &__date {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
+    font-weight: bold;
   }
 
-  &__totalHt {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
+  &__paiementContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+  &__btnAjouterTout {
+    background-color: orange;
+    color: rgb(27, 27, 141);
+    border-radius: 10px;
+    height: 4vh;
+    width: 10vw;
+  }
+
+  &__facture {
+    align-self: center;
   }
 }
