@@ -3,6 +3,7 @@ import Navbar from './components/layout/Navbar/Navbar';
 import MostPurchasedProducts from './components/layout/MostPurchasedProducts';
 import Home from "./components/pages/Home";
 import Orders from "./components/layout/Orders";
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         </Route>
         <Route path="/orders" element={<Orders />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
