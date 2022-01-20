@@ -1,13 +1,12 @@
-import MostPurchasedProducts from "../layout/MostPurchasedProducts";
-import Navbar from "../layout/Navbar/Navbar";
+import React from 'react';
+import MostPurchasedProducts from '../layout/MostPurchasedProducts';
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <MostPurchasedProducts />
     </div>
-  );
+    )
 };
 
 export default Home;

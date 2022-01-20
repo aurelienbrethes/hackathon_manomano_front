@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
-import { ProductsContextProvider } from './contexts/Products';
-import './styles.scss';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import { ProductsContextProvider } from "./contexts/Products";
+import "./styles.scss";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -11,6 +11,5 @@ ReactDOM.render(
       <App />
     </ProductsContextProvider>
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
