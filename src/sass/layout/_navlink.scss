@@ -15,5 +15,12 @@
             width: 30px;
             padding-right: 10px;
         }
-    };
+    }
+    &__childList{
+        width: 300px;
+        min-height: 200px;
+        background-color: blue;
+        position: absolute;
+        z-index: 2;
+    }
 }

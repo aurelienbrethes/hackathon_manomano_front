@@ -1,8 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/layout/Navbar/Navbar";
 import MostPurchasedProducts from "./components/layout/MostPurchasedProducts";
+
 import Home from "./components/pages/Home";
+
 import Orders from "./components/layout/Orders";
+import Footer from './components/layout/Footer';
+import AllProducts from './components/layout/AllProducts';
+// import Basket from './components/layout/Basket';
+
 
 import Cart from "./components/layout/Cart";
 
@@ -13,13 +19,17 @@ function App() {
       <Orders /> */}
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route path="/navbar" element={<Navbar />} />
-          <Route path="/products" element={<MostPurchasedProducts />} />
-        </Route>
+        <Route path="/" element={<Home />}/>
+        <Route path="/products" element={<AllProducts />} />
         <Route path="/orders" element={<Orders />} />
+
         <Route path="/panier" element={<Cart />} />
+
+        <Route path="/favoris" element={<MostPurchasedProducts />} />
+        {/* <Route path="/panier" element={<Basket/>} /> */}
+
       </Routes>
+      <Footer />
     </div>
   );
 }
