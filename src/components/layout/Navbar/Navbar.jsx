@@ -7,7 +7,6 @@ import promos from '../../../ressources/promos_logo.png';
 import produit from '../../../ressources/produit_logo.png';
 import { Link } from 'react-router-dom';
 
-
 const linkArray = [
     {
         label : "PRODUITS",
@@ -16,10 +15,10 @@ const linkArray = [
         alt : "logo produits"
     },
     {
-        label : "PROMOS",
-        path : "",
+        label : "MES COMMANDES",
+        path : "/orders",
         logo : promos,
-        alt : "logo promos"
+        alt : "commandes logo"
     },
     {
         label : "MES LISTES",
@@ -46,7 +45,7 @@ const Navbar = () => {
         <div className='navbar'>
             <Link to="/">
                 <img src={logo} alt="manomano logo" />
-            </Link>            
+            </Link>
             <nav>
                 <ul className='navbar__list'>
                     {linkArray && linkArray.map((e, i) =>
