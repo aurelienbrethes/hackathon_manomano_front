@@ -1,28 +1,46 @@
 import React from "react";
+import panier from "../../ressources/panier_logo.png";
+import paiements from "../../ressources/paiements.png";
 
 const Basket = () => {
   return (
-    <div>
-      <div className="left">
-        <div>
-          <button>Panier</button>
+    <div className="basket">
+      <div className="basket__left">
+        <div className="basket__title">
+          <img src={panier} alt="" className="basket__title__logo" />{" "}
+          <p>Panier</p>
         </div>
-        <button>Editer un devis</button>
-        <p>1 produit label </p>
-        <div className="bas">
-          <p>
-            Vous avez un code promo ? Grdez le au chaud, vous pourrez l'ajouter
+        <div className="basket__products">
+          <div className="basket__products__display">
+            <img src="" alt="" className="basket__products__box" />
+            <p> 1 produit label</p>
+            <img src="" alt="" className="basket__products__pro" />
+          </div>
+          <button className="basket__button">Editer un devis</button>
+        </div>
+        <div className="basket__bottom">
+          <p className="basket__bottom__discount">
+            Vous avez un code promo ? Gardez le au chaud, vous pourrez l'ajouter
             au moment du paiement.
           </p>
-          <div>
-            <p>Total du panier TTC</p>
-            <p>Frais de livraison calculés à l'étape suivante</p>
-            <p>260€</p>
-            <button>Passer à la livraison</button>
+          <div className="basket__bottom__total">
+            <div className="basket__total__line">
+              <p className=" basket__bottom__total__price">Total du panier</p>
+              <p>xxx HT</p>
+            </div>
+            <div className="basket__total__line">
+              <p className=" basket__bottom__total__delivery">
+                Frais de livraison calculés à l'étape suivante
+              </p>
+              <p>xxx HT</p>
+            </div>
+            <button className="basket__button basket__total__button">
+              Passer à la livraison
+            </button>
           </div>
         </div>
       </div>
-      <div className="right">
+      <div className="basket__right">
         <p>Total du panier HT</p>
         <p>185.12€</p>
         <p>222.14 € TTC</p>
@@ -32,9 +50,9 @@ const Basket = () => {
         <p>4.90€</p>
         <p>Total a payer TTC</p>
         <p>227.04€</p>
-        <button>Passer à la livraison</button>
+        <button className="basket__button">Passer à la livraison</button>
 
-        <img alt="" />
+        <img src={paiements} alt="" />
       </div>
     </div>
   );
