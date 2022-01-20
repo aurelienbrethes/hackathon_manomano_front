@@ -7,7 +7,9 @@ import './styles.scss';
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <ProductsContextProvider>
+      <App />
+    </ProductsContextProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );
