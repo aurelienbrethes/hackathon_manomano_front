@@ -8,14 +8,15 @@ const Cart = () => {
   const { productsOnCart } = useContext(ProductsContext);
   const [total, setTotal] = useState(0);
 
+  console.log(productsOnCart);
   useEffect(() => {
     let tototal = 0;
     if (productsOnCart.length) {
-      productsOnCart.reduce(
-        (tototal, { quantity, price }) => tototal + quantity * price
+      console.log(
+        productsOnCart.reduce((sum, product) => sum + product.price, 0)
       );
     }
-    console.log(tototal);
+    // console.log(tototal);
   }, []);
 
   return (
