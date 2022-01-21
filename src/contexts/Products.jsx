@@ -23,7 +23,8 @@ export const ProductsContextProvider = ({ children }) => {
         (product) => product.id_product === idProduct
       );
       const updatedProductsOnCart = [...productsOnCart];
-      updatedProductsOnCart[position].quantity--;
+      updatedProductsOnCart[position].quantity = quantity;
+      console.log("New quantity : " + quantity);
       setProductsOnCart(updatedProductsOnCart);
     }
   };

@@ -347,8 +347,7 @@ li {
   background-color: white;
 }
 .purchased-product__btn {
-  align-self: flex-end;
-  font-size: 0.8em;
+  font-size: 1vw !important;
 }
 
 .navbar {
