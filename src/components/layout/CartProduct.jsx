@@ -8,7 +8,6 @@ const CartProduct = ({ name, price, img, quantity, idProduct }) => {
   const [productQuantity, setProductQuantity] = useState(quantity);
 
   const changeQuantity = (newQuantity) => {
-    console.log(newQuantity);
     setProductQuantity(newQuantity);
     modifyProductInCart(idProduct, newQuantity);
   };

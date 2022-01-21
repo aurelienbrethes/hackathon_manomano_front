@@ -11,7 +11,6 @@ export const ProductsContextProvider = ({ children }) => {
   const [idOrder, setIdOrder] = useState();
 
   const modifyProductInCart = (idProduct, quantity) => {
-    console.log(idProduct, quantity);
     // if quantity is 0, the product must be deleted from cart
     if (quantity === 0) {
       setProductsOnCart(
@@ -25,7 +24,6 @@ export const ProductsContextProvider = ({ children }) => {
       );
       const updatedProductsOnCart = [...productsOnCart];
       updatedProductsOnCart[position].quantity = quantity;
-      console.log("New quantity : " + quantity);
       setProductsOnCart(updatedProductsOnCart);
     }
   };
@@ -42,7 +40,6 @@ export const ProductsContextProvider = ({ children }) => {
       );
       const updatedProductsOnCart = [...productsOnCart];
       updatedProductsOnCart.push({ quantity: 1, ...positionInProducts });
-      console.log(updatedProductsOnCart);
       setProductsOnCart(updatedProductsOnCart);
     }
     // Else, just add 1 to quantity
