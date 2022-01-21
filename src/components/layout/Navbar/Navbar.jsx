@@ -61,12 +61,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      <nav>
-        <ul className="navbar__list">
-          {linkArray &&
-            linkArray.map((e, i) => (
-=======
       <nav className="navbar__bottom">
         <ul className="navbar__bottom-list">
           {linkLeftArray &&
@@ -87,7 +81,6 @@ const Navbar = () => {
         <ul className="navbar__bottom-list">
           {linkRightArray &&
             linkRightArray.map((e, i) => (
->>>>>>> 370f50723de3dd0aab2f2cd2d627c47d0ec0db3a
               <Navlink
                 key={i}
                 label={e.label}
