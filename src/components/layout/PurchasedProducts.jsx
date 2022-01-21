@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ProductsContext from "../../contexts/Products";
 
-const PurchasedProducts = ({ img, name, price }) => {
+const PurchasedProducts = ({ id_product, img, name, price }) => {
   const { productsOnCart } = useContext(ProductsContext);
 
   return (
@@ -19,7 +19,12 @@ const PurchasedProducts = ({ img, name, price }) => {
         <button
           className="buttonClass"
           onClick={() => {
-            productsOnCart.push({ img: img, name: name, price: price });
+            productsOnCart.push({
+              id_product,
+              img: img,
+              name: name,
+              price: price,
+            });
           }}
         >
           Ajouter au panier

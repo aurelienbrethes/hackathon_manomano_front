@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
 import panier from "../../ressources/panier_logo.png";
 import paiements from "../../ressources/paiements.png";
 import CartProduct from "./CartProduct";
@@ -7,6 +8,8 @@ import ProductsContext from "../../contexts/Products";
 const Cart = () => {
   const { productsOnCart } = useContext(ProductsContext);
   const [total, setTotal] = useState(0);
+  console.log(productsOnCart);
+  const totalPrice = 41;
 
   console.log(productsOnCart);
   useEffect(() => {
@@ -18,6 +21,22 @@ const Cart = () => {
     }
     // console.log(tototal);
   }, []);
+
+  const handleCreateOrder = () => {
+    axios
+      .post("http://localhost:8000/api/orders", {
+        total_price: totalPrice,
+        date: new Date(),
+      })
+      .then((order) => handleAddOrder(order.id_order, 2));
+  };
+
+  const handleAddOrder = (id_order, id_product) => {
+    axios.post(`http://localhost:8000/api/orders/${id_order}/products`, {
+      id_order: id_order,
+      id_product: id_product,
+    });
+  };
 
   return (
     <div className="cart">
@@ -61,7 +80,10 @@ const Cart = () => {
               </p>
               <p>xxx HT</p>
             </div>
-            <button className="cart__button cart__total__button buttonClass">
+            <button
+              className="cart__button cart__total__button buttonClass"
+              onClick={() => handleCreateOrder()}
+            >
               Passer à la livraison
             </button>
           </div>
