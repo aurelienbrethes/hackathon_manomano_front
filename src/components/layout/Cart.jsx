@@ -8,7 +8,6 @@ import ProductsContext from "../../contexts/Products";
 const Cart = () => {
   const { productsOnCart } = useContext(ProductsContext);
   const [total, setTotal] = useState(0);
-  console.log(productsOnCart);
   const totalPrice = 41;
 
   useEffect(() => {
