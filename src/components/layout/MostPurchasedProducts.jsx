@@ -12,6 +12,8 @@ const MostPurchasedProducts = () => {
       .then((data) => setPurchasedProducts(data));
   }, []);
 
+  console.log(purchasedProducts);
+
   return (
     <div className="most-purchased-products">
       <div className="most-purchased-products__title">
