@@ -1,11 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import panier from "../../ressources/panier_logo.png";
 import paiements from "../../ressources/paiements.png";
 import CartProduct from "./CartProduct";
 import ProductsContext from "../../contexts/Products";
 
 const Cart = () => {
-  const { products } = useContext(ProductsContext);
+  const { productsOnCart } = useContext(ProductsContext);
+  const [total, setTotal] = useState(0);
+
+  console.log(productsOnCart);
+  useEffect(() => {
+    let tototal = 0;
+    if (productsOnCart.length) {
+      console.log(
+        productsOnCart.reduce((sum, product) => sum + product.price, 0)
+      );
+    }
+    // console.log(tototal);
+  }, []);
 
   return (
     <div className="cart">
@@ -23,8 +35,8 @@ const Cart = () => {
           <button className="cart__button">Editer un devis</button>
         </div>
         <div className="cart__map">
-          {products.length &&
-            products.map((cartProduct, index) => (
+          {productsOnCart.length &&
+            productsOnCart.map((cartProduct, index) => (
               <CartProduct
                 key={index}
                 img={cartProduct.img}
