@@ -28,8 +28,42 @@
 
   &__qtyprice {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    &__spinner {
+      display: flex;
+      border: 1px solid rgba(112, 112, 112, 0.3);
+      justify-content: space-between;
+      border-radius: 5px;
+      height: 20px;
+      padding: 0.5em;
+      input[type="number"] {
+        -moz-appearance: textfield;
+        border: none;
+        text-align: center;
+        width: 50px;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+      }
+      &--left {
+        border: none;
+        background: none;
+        width: 15px;
+        opacity: 0.3;
+        cursor: pointer;
+        img {
+          width: 100%;
+        }
+      }
+      &--right {
+        @extend .cart-product__qtyprice__spinner--left;
+        opacity: 1;
+      }
+    }
   }
   &__delete {
     border: none;
