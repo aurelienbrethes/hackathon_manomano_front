@@ -44,6 +44,10 @@
     font-size: 0.6em;
   }
 
+  &__btnAjouterTout:hover {
+    cursor: pointer;
+  }
+
   &__totalTtc {
     font-weight: bold;
   }

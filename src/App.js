@@ -17,6 +17,7 @@ function App() {
           <Route path="/products" element={<MostPurchasedProducts />} />
         </Route>
         <Route path="/orders" element={<Orders />} />
+        {/* <Route path="/basket" element={<Basket />} /> */}
       </Routes>
       <Footer />
     </div>
