@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ArticleOrder from "./ArticleOrder";
 import ProductsContext from "../../contexts/Products";
 import download from "../../ressources/download.png";
@@ -6,6 +6,9 @@ import axios from "axios";
 
 const Orders = ({ img, name }) => {
   const { products, setProducts } = useContext(ProductsContext);
+
+  const [orderNumber, setOrderNumber] = useState();
+  const [listNumber, setListNumber] = useState([]);
 
   useEffect(() => {
     axios
