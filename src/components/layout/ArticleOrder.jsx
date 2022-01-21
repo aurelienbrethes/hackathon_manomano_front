@@ -13,7 +13,7 @@ const ArticleOrder = ({ img, name, price }) => {
       <img src={img} alt="Article" />
       <p className="articleOrder__name">{name}</p>
       <button
-        className="articleOrder__btnAjouter"
+        className="buttonClass"
         onClick={() => {
           productsOnCart.push({
             img: img,

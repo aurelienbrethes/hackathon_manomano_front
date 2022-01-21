@@ -17,6 +17,7 @@ const PurchasedProducts = ({ img, name, price }) => {
       </div>
       <div className="purchased-product__btn">
         <button
+          className="buttonClass"
           onClick={() => {
             productsOnCart.push({ img: img, name: name, price: price });
           }}

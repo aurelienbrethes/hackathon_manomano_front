@@ -59,7 +59,7 @@ const Orders = ({ img, name }) => {
       <div className="orders__paiementContainer">
         <div className="orders__paiement">Mode de paiement: Mastercard</div>
         <button
-          className="orders__btnAjouterTout"
+          className="buttonClass"
           onClick={() => {
             productsOnCart.push({
               img: img,

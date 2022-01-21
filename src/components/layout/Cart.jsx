@@ -32,7 +32,7 @@ const Cart = () => {
             <p> 1 produit label</p>
             <img src="" alt="" className="cart__products__pro" />
           </div>
-          <button className="cart__button">Editer un devis</button>
+          <button className="cart__button buttonClass">Editer un devis</button>
         </div>
         <div className="cart__map">
           {productsOnCart.length &&
@@ -61,7 +61,7 @@ const Cart = () => {
               </p>
               <p>xxx HT</p>
             </div>
-            <button className="cart__button cart__total__button">
+            <button className="cart__button cart__total__button buttonClass">
               Passer à la livraison
             </button>
           </div>
@@ -88,7 +88,9 @@ const Cart = () => {
           <p className="cart__total__line__title1">Total a payer TTC</p>
           <p>227.04€</p>
         </div>
-        <button className="cart__button">Passer à la livraison</button>
+        <button className="cart__button buttonClass">
+          Passer à la livraison
+        </button>
 
         <img src={paiements} alt="" />
       </div>
