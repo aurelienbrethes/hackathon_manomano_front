@@ -35,6 +35,8 @@ const MostPurchasedProducts = () => {
               img={product.img}
               name={product.name}
               price={product.price}
+              quantity={1}
+              idProduct={product.id_product}
             />
           ))
         )}

@@ -54,20 +54,6 @@
     padding: 1em;
   }
 
-  &__btnAjouterTout {
-    background-color: orange;
-    color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border: none;
-    height: 4vh;
-    width: auto;
-    font-size: 0.6em;
-    padding: 5px;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
   &__totalTtc {
     font-weight: bold;
   }
@@ -83,6 +69,6 @@
   }
 
   select {
-    width : 100px;
+    width: 100px;
   }
 }
