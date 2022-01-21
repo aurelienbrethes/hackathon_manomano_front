@@ -6,7 +6,6 @@ import ProductsContext from "../../contexts/Products";
 const CartProduct = ({ name, price, img, quantity, idProduct }) => {
   const { modifyProductInCart } = useContext(ProductsContext);
   const [productQuantity, setProductQuantity] = useState(quantity);
-  console.log(quantity);
 
   const changeQuantity = (newQuantity) => {
     console.log(newQuantity);

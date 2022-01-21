@@ -8,6 +8,7 @@ const ProductsContext = createContext({
 export const ProductsContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [productsOnCart, setProductsOnCart] = useState([]);
+  const [idOrder, setIdOrder] = useState();
 
   const modifyProductInCart = (idProduct, quantity) => {
     console.log(idProduct, quantity);
@@ -58,6 +59,8 @@ export const ProductsContextProvider = ({ children }) => {
         setProductsOnCart,
         modifyProductInCart,
         addProductInCart,
+        idOrder,
+        setIdOrder,
       }}
     >
       {children}

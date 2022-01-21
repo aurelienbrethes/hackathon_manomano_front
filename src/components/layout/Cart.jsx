@@ -6,9 +6,9 @@ import CartProduct from "./CartProduct";
 import ProductsContext from "../../contexts/Products";
 
 const Cart = () => {
-  const { productsOnCart } = useContext(ProductsContext);
+  const { productsOnCart, idOrder, setProductsOnCart } =
+    useContext(ProductsContext);
   const [total, setTotal] = useState(0);
-  console.log(productsOnCart);
   const totalPrice = 41;
 
   useEffect(() => {
@@ -24,20 +24,24 @@ const Cart = () => {
     }
   }, [productsOnCart]);
 
-  const handleCreateOrder = () => {
+  const handleAddOrder = (id_order, id_product) => {
+    axios.post(`http://localhost:8000/api/orders/${id_order}/products`, {
+      id_product: id_product,
+    });
+  };
+
+  const addCartInOrder = (id) => {
     axios
       .post("http://localhost:8000/api/orders", {
         total_price: totalPrice,
         date: new Date(),
       })
-      .then((order) => handleAddOrder(order.id_order, 2));
-  };
-
-  const handleAddOrder = (id_order, id_product) => {
-    axios.post(`http://localhost:8000/api/orders/${id_order}/products`, {
-      id_order: id_order,
-      id_product: id_product,
-    });
+      .then((order) =>
+        productsOnCart.map((product) => {
+          handleAddOrder(order.data.id, product.id_product);
+          setProductsOnCart([]);
+        })
+      );
   };
 
   return (
@@ -86,7 +90,8 @@ const Cart = () => {
             </div>
             <button
               className="cart__button cart__total__button buttonClass"
-              onClick={() => handleCreateOrder()}
+              // onClick={() => handleCreateOrder()}
+              onClick={() => addCartInOrder(idOrder)}
             >
               Passer à la livraison
             </button>
