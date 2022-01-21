@@ -80,6 +80,8 @@
           grid-row-end: 3;
           text-align: start;
           margin: 0.5rem;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
 
           p {
             font-size: 16px;
