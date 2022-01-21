@@ -20,7 +20,6 @@ const AllProducts = () => {
         productsOnCart.lenght
       );
     }
-    // console.log(tototal);
   }, []);
 
   return (
@@ -59,7 +58,7 @@ const AllProducts = () => {
                     <p>€00 HT</p>
                   </div>
                   <div className="allProducts__body__list__details__price__TTC">
-                    {(item.price * 20) / 100 + item.price} € TTC
+                    {Math.round(item.price * 1.2)} € TTC
                     <img src={Mpro} alt="Mpro" />
                   </div>
                 </div>
