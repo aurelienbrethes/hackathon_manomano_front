@@ -1,19 +1,83 @@
 .navbar{
+    
     width: 100vw;
-    height: 150px;
+    height: 200px;
     background-image: url("../../ressources//bg_blue.png");
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 50px;
-    &__list{
+
+    &__top{
         display: flex;
-        justify-content: space-around;
-        height: 8px;
-        padding-bottom: 25px;
-        padding-left: 0;
+        justify-content: space-between;
+        height: 75px;
+
+        &-contactContainer {
+
+            display: flex;
+        
+            &-sideContact{
+                width: 0;
+                height: 0;            
+                border-bottom: 75px solid transparent;            
+                border-right: 20px solid #ec7253;
+            }
+
+            &-contact{
+                
+                background: linear-gradient(90deg, #ec7253, #e7b548);;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 500px;
+                
+                p {
+                    color: white;
+                    span {
+                        color: black;
+                        font-weight: bold;
+                    }
+                }
+            }        
+        }
     }
-    img {
-        width: 250px;
+
+    &__bottom {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+
+        &-list{
+            display: flex;
+            justify-content: space-between;
+            height: 8px;
+            padding-left: 0;
+            width: 500px;
+        }
+        img {
+            width: 250px;
+        }
+
+        &-search{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 800px;
+            height: 50px;
+
+            img{
+                width: auto;
+                height: 100%;
+                border-radius: 0 5px 5px 0;
+            }
+
+            input {
+                height: 100%;
+                width: 100%;
+                border-radius: 5px 0 0 5px;
+            }
+        }
     }
 }
