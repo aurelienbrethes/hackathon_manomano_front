@@ -5,24 +5,43 @@ import download from "../../ressources/download.png";
 import axios from "axios";
 
 const Orders = ({ img, name }) => {
-  const { productsOnCart } = useContext(ProductsContext);
+  const { products, setProducts } = useContext(ProductsContext);
 
-  const [productsList, setProductsList] = useState([]);
-  console.log(productsList);
+  const [orderNumber, setOrderNumber] = useState();
+  const [listNumber, setListNumber] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/products`)
-      .then((res) => setProductsList(res.data))
+      .get(`http://localhost:8000/api/products`)
+      .then((res) => setProducts(res.data))
       .catch((err) => {
         console.error(err);
       });
+  }, [orderNumber]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/orders")
+      .then((res) => res.data)
+      .then((data) => setListNumber(data))
+      .catch((err) => console.err(err));
   }, []);
 
   return (
     <div className="orders">
       <h1 className="orders__title">Mes achats</h1>
-      <p className="orders__subtitle">Tous les produits achetés</p>
+      <div className="orders__choice">
+        <p className="orders__choice-subtitle">Tous les produits achetés</p>
+        <select id="id_order" onChange={(e) => setOrderNumber(e.target.value)}>
+          <option value="">Choisissez votre commande</option>
+          {listNumber &&
+            listNumber.map((number, index) => (
+              <option key={index} value={number.id_order}>
+                {number.id_order}
+              </option>
+            ))}
+        </select>
+      </div>
       <div className="orders__headOrder">
         <div className="orders_dateContainer">
           <p className="orders__dateTitle">Commandé le</p>
@@ -36,27 +55,28 @@ const Orders = ({ img, name }) => {
 
         <div className="orders__facture">
           <img src={download} alt="Logo download" />
-          <p>Factures</p>
+          <p>Facture</p>
         </div>
       </div>
       <div className="orders__paiementContainer">
         <div className="orders__paiement">Mode de paiement: Mastercard</div>
         <button
-          className="orders__btnAjouterTout"
+          className="buttonClass"
           onClick={() => {
-            productsOnCart.push({ img: img, name: name });
+            alert("non je ne crois pas");
           }}
         >
           Tout ajouter au panier
         </button>
         <div className="orders__fraisLivraison">Frais de livraison: 14.50€</div>
       </div>
-      {productsList &&
-        productsList.map((product) => (
+      {products &&
+        products.map((product) => (
           <ArticleOrder
-            key={product.id}
+            key={product.id_product}
             img={product.img}
             name={product.name}
+            idProduct={product.id_product}
           />
         ))}
     </div>
