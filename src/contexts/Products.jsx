@@ -8,6 +8,7 @@ const ProductsContext = createContext({
 export const ProductsContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [productsOnCart, setProductsOnCart] = useState([]);
+  const [idOrder, setIdOrder] = useState();
 
   const modifyProductInCart = (idProduct, quantity) => {
     // if quantity is 0, the product must be deleted from cart
@@ -61,6 +62,8 @@ export const ProductsContextProvider = ({ children }) => {
         setProductsOnCart,
         modifyProductInCart,
         addProductInCart,
+        idOrder,
+        setIdOrder,
       }}
     >
       {children}
