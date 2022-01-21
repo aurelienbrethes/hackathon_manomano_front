@@ -1,19 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import ArticleOrder from "./ArticleOrder";
 import ProductsContext from "../../contexts/Products";
 import download from "../../ressources/download.png";
 import axios from "axios";
 
 const Orders = ({ img, name }) => {
-  const { productsOnCart } = useContext(ProductsContext);
-
-  const [productsList, setProductsList] = useState([]);
-  console.log(productsList);
+  const { products, setProducts } = useContext(ProductsContext);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/orders`)
-      .then((res) => setProductsList(res.data))
+      .get(`http://localhost:8000/api/products`)
+      .then((res) => setProducts(res.data))
       .catch((err) => {
         console.error(err);
       });
@@ -44,24 +41,20 @@ const Orders = ({ img, name }) => {
         <button
           className="orders__btnAjouterTout"
           onClick={() => {
-            productsOnCart.push({
-              img: img,
-              name: name,
-              quantity: 1,
-              price: 1,
-            });
+            alert("non je ne crois pas");
           }}
         >
           Tout ajouter au panier
         </button>
         <div className="orders__fraisLivraison">Frais de livraison: 14.50€</div>
       </div>
-      {productsList &&
-        productsList.map((product) => (
+      {products &&
+        products.map((product) => (
           <ArticleOrder
             key={product.id}
             img={product.img}
             name={product.name}
+            idProduct={product.id_product}
           />
         ))}
     </div>
