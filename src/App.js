@@ -1,21 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/layout/Navbar/Navbar";
 import MostPurchasedProducts from "./components/layout/MostPurchasedProducts";
-
-import Home from "./components/pages/Home";
-
+import Home from "./components/pages/home";
 import Orders from "./components/layout/Orders";
 import Footer from "./components/layout/Footer";
 import AllProducts from "./components/layout/AllProducts";
-// import Basket from './components/layout/Basket';
-
 import Cart from "./components/layout/Cart";
 
 function App() {
   return (
     <div className="App">
-      {/* <Home />
-      <Orders /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

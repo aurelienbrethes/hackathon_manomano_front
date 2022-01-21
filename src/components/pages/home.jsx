@@ -3,7 +3,7 @@ import AllProducts from "../layout/AllProducts";
 
 const Home = () => {
   return (
-    <div className="home">
+    <div>
       <AllProducts />
     </div>
   );
