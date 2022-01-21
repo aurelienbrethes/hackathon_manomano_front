@@ -1,12 +1,12 @@
-import React from 'react';
-import AllProducts from '../layout/AllProducts';
+import React from "react";
+import AllProducts from "../layout/AllProducts";
 
 const Home = () => {
   return (
-    <div className='home'>
+    <div className="home">
       <AllProducts />
     </div>
-    )
+  );
 };
 
 export default Home;
