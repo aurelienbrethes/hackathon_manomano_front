@@ -54,7 +54,7 @@ const Orders = ({ img, name }) => {
       {productsList &&
         productsList.map((product) => (
           <ArticleOrder
-            key={product.id}
+            key={product.id_product}
             img={product.img}
             name={product.name}
           />

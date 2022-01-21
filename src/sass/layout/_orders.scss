@@ -36,12 +36,16 @@
 
   &__btnAjouterTout {
     background-color: orange;
-    color: rgb(27, 27, 141);
+    color: rgb(255, 255, 255);
     border-radius: 10px;
     border: none;
     height: 4vh;
-    width: 10vw;
+    width: auto;
     font-size: 0.6em;
+    padding: 5px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__totalTtc {
