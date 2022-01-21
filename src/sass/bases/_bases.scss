@@ -15,7 +15,7 @@ li {
   cursor: pointer;
   padding: 0.5em 1em;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.5vw;
   border-radius: 5px;
   color: $ColorText;
   border: none;
@@ -24,5 +24,8 @@ li {
   color: rgb(27, 27, 141);
   &:hover {
     background: $colorButtonHover;
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 2vw;
   }
 }
