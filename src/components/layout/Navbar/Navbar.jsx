@@ -1,3 +1,4 @@
+
 import Navlink from './Navlink';
 import logo from '../../../ressources/logo_manomano.png';
 import comptes from '../../../ressources/comptes_logo.png';
@@ -5,9 +6,10 @@ import favoris from '../../../ressources/favoris_logo.png';
 import panier from '../../../ressources/panier_logo.png';
 import promos from '../../../ressources/promos_logo.png';
 import produit from '../../../ressources/produit_logo.png';
+import search from '../../../ressources/search.png';
 import { Link } from 'react-router-dom';
 
-const linkArray = [
+const linkLeftArray = [
     {
         label : "PRODUITS",
         path : "/products",
@@ -19,7 +21,10 @@ const linkArray = [
         path : "/orders",
         logo : promos,
         alt : "commandes logo"
-    },
+    }
+];
+
+const linkRightArray = [
     {
         label : "MES FAVORIS",
         path : "/favoris",
@@ -27,7 +32,7 @@ const linkArray = [
         alt : "logo listes"
     },
     {
-        label : "COMPTES ET FACTURES",
+        label : "MES FACTURES",
         path : "/orders",
         logo : comptes,
         alt : "logo comptes et factures"
@@ -38,7 +43,7 @@ const linkArray = [
         logo : panier,
         alt : "logo panier"
     }
-];
+]
 
 const Navbar = () => {
     return(
@@ -54,9 +59,24 @@ const Navbar = () => {
                     </div>
                 </div>           
             </div>            
-            <nav>
-                <ul className='navbar__list'>
-                    {linkArray && linkArray.map((e, i) =>
+            <nav className='navbar__bottom'>
+                <ul className='navbar__bottom-list'>
+                    {linkLeftArray && linkLeftArray.map((e, i) =>
+                        <Navlink
+                            key = {i}
+                            label = {e.label}
+                            path = {e.path}
+                            logo = {e.logo}
+                            alt = {e.alt}
+                        />
+                    )}
+                </ul>
+                <div className='navbar__bottom-search'>
+                    <input type="text" value="Effectuer une recherche sur Manomano" />
+                    <img src={search} alt="search logo" />
+                </div>
+                <ul className='navbar__bottom-list'>
+                    {linkRightArray && linkRightArray.map((e, i) =>
                         <Navlink
                             key = {i}
                             label = {e.label}
@@ -70,5 +90,6 @@ const Navbar = () => {
         </div>
     )
 }
+
 
 export default Navbar;
