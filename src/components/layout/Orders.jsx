@@ -12,7 +12,7 @@ const Orders = ({ img, name }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/products`)
+      .get(`http://localhost:8000/api/products`)
       .then((res) => setProductsList(res.data))
       .catch((err) => {
         console.error(err);
