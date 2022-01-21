@@ -223,7 +223,7 @@ li {
 }
 .orders__choice select {
   height: 40px;
-  width: 30px;
+  width: 130px;
   margin-left: 300px;
   border-radius: 4px;
   font-size: 15px;
@@ -262,14 +262,13 @@ li {
   height: 4vh;
 }
 .orders select {
-  width: 100px;
+  width: auto;
 }
 
 .articleOrder {
   padding: 0.6em;
   margin-top: 0.6em;
   display: grid;
-  grid-template-rows: 1fr 2fr;
   grid-template-columns: 1fr 4fr 1fr;
   border: dotted 1px #bbb5b5;
   border-radius: 10px;
@@ -282,7 +281,7 @@ li {
 .articleOrder img {
   grid-row: 2/3;
   grid-column: 1/2;
-  width: 8vw;
+  height: 8.2vh;
 }
 .articleOrder__name {
   grid-row: 2/3;
@@ -291,8 +290,7 @@ li {
 .articleOrder__btnAjouter {
   grid-row: 2/3;
   grid-column: 3/4;
-  align-self: flex-end;
-  font-size: 0.8em;
+  font-size: 1vw !important;
 }
 
 .most-purchased-products {
