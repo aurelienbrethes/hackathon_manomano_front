@@ -11,3 +11,18 @@ h1 {
 li {
   list-style: none;
 }
+.buttonClass {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 5px;
+  color: $ColorText;
+  border: none;
+  background: $colorButton;
+  transition: 0.5s ease-in-out;
+  color: rgb(27, 27, 141);
+  &:hover {
+    background: $colorButtonHover;
+  }
+}
