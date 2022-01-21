@@ -9,6 +9,7 @@ const Orders = ({ img, name }) => {
 
   const [orderNumber, setOrderNumber] = useState(0);
   const [productsList, setProductsList] = useState([]);
+  const [listNumber, setListNumber] = useState();
 
   // Search all products from my order
 
@@ -21,6 +22,13 @@ const Orders = ({ img, name }) => {
       });
   }, [orderNumber]);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/orders")
+      .then((res) => res.data)
+      .then((data) => setListNumber(data))
+      .catch((err) => console.err(err));
+  }, []);
 
   return (
     <div className="orders">
@@ -29,14 +37,14 @@ const Orders = ({ img, name }) => {
         <p className="orders__choice-subtitle">Tous les produits achetés</p>
         <select id="id_order" onChange={(e) => setOrderNumber(e.target.value)}>
           <option value="">Choisissez votre commande</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
+          {listNumber &&
+            listNumber.map((number, index) => (
+              <option key={index} value={number.id_order}>
+                {number.id_order}
+              </option>
+            ))}
         </select>
-      </div>    
+      </div>
       <div className="orders__headOrder">
         <div className="orders_dateContainer">
           <p className="orders__dateTitle">Commandé le</p>
