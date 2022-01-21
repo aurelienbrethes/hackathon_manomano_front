@@ -1,6 +1,5 @@
 import Navlink from "./Navlink";
 import logo from "../../../ressources/logo_manomano.png";
-import comptes from "../../../ressources/comptes_logo.png";
 import favoris from "../../../ressources/favoris_logo.png";
 import panier from "../../../ressources/panier_logo.png";
 import promos from "../../../ressources/promos_logo.png";
@@ -29,12 +28,6 @@ const linkRightArray = [
     path: "/favoris",
     logo: favoris,
     alt: "logo listes",
-  },
-  {
-    label: "MES FACTURES",
-    path: "/orders",
-    logo: comptes,
-    alt: "logo comptes et factures",
   },
   {
     label: "PANIER",

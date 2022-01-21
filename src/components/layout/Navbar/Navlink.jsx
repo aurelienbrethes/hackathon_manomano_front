@@ -6,7 +6,7 @@ const Navlink = ({path, label, logo, alt}) => {
         <li className='navlink'>
                 <Link className='navlink__link' to={path}>
                     <img className='navlink__link-logo' src={logo} alt={alt} />
-                    {label}
+                    <p>{label}</p>
                 </Link>
         </li>
     )
