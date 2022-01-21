@@ -90,7 +90,6 @@ const Cart = () => {
             </div>
             <button
               className="cart__button cart__total__button buttonClass"
-              // onClick={() => handleCreateOrder()}
               onClick={() => addCartInOrder(idOrder)}
             >
               Passer à la livraison
@@ -121,7 +120,10 @@ const Cart = () => {
           <p className="cart__total__line__title1">Total a payer TTC</p>
           <p>{Math.trunc((total * 1.2 + 4.9) * 100) / 100} €</p>
         </div>
-        <button className="cart__button buttonClass">
+        <button
+          className="cart__button buttonClass"
+          onClick={() => addCartInOrder(idOrder)}
+        >
           Passer à la livraison
         </button>
 
