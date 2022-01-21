@@ -19,7 +19,7 @@ const Footer = () => {
             </ul>
             <h2>Service client</h2>
             <h3>Allo Houston, ici ManoMano</h3>
-            <p>01 75 85 01 70</p>
+            <p className="footer__up--orange">01 75 85 01 70</p>
             <p>
               Du lundi au vendredi 8h-20h
               <br />
@@ -37,29 +37,37 @@ const Footer = () => {
             </ul>
             <h2>International</h2>
             <h3>Et bientôt présents sur Mars !</h3>
-            <div className="footer__italian-flag" />
-            <div className="footer__english-flag" />
-            <div className="footer__german-flag" />
-            <div className="footer__spanish-flag" />
+            <div className="footer__flags">
+              <div className="footer__italian-flag" />
+              <div className="footer__english-flag" />
+              <div className="footer__german-flag" />
+              <div className="footer__spanish-flag" />
+            </div>
           </div>
           <div className="footer__up--3">
             <h2>Découvrez l'application ManoManoPro*</h2>
             <h3>*Notre application pour les professionnels du bâtiment</h3>
-            <div className="footer__app-store" />
-            <div className="footer__google-play" />
+            <div className="footer__store">
+              <div className="footer__app-store" />
+              <div className="footer__google-play" />
+            </div>
             <h2>Paiement sécurisé</h2>
-            <div className="footer__cb" />
-            <div className="footer__visa" />
-            <div className="footer__mastercard" />
-            <div className="footer__paypal" />
-            <div className="footer__virement" />
+            <div className="footer__payments">
+              <div className="footer__cb" />
+              <div className="footer__visa" />
+              <div className="footer__mastercard" />
+              <div className="footer__paypal" />
+              <div className="footer__virement" />
+            </div>
             <h2>Rejoignez-nous</h2>
             <h3>La magie de l'internet mondial !</h3>
-            <div className="footer__twitter" />
-            <div className="footer__facebook" />
-            <div className="footer__pinterest" />
-            <div className="footer__instagram" />
-            <div className="footer__blog" />
+            <div className="footer__networks">
+              <div className="footer__twitter" />
+              <div className="footer__facebook" />
+              <div className="footer__pinterest" />
+              <div className="footer__instagram" />
+              <div className="footer__blog" />
+            </div>
           </div>
         </div>
         <div className="footer__down">
