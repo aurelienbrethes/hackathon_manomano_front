@@ -11,9 +11,8 @@ const ArticleOrder = ({ img, name, price, idProduct }) => {
       <img src={img} alt="Article" />
       <p className="articleOrder__name">{name}</p>
       <button
-        className="articleOrder__btnAjouter"
+        className="articleOrder__btnAjouter buttonClass"
         onClick={() => addProductInCart(idProduct)}
-
       >
         Ajouter au panier
       </button>

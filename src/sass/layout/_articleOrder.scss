@@ -3,7 +3,7 @@
   margin-top: 0.6em;
   display: grid;
   grid-template-rows: 1fr 2fr;
-  grid-template-columns: 1fr 4fr 2fr;
+  grid-template-columns: 1fr 4fr 1fr;
   border: dotted 1px rgb(187, 181, 181);
   border-radius: 10px;
 
@@ -27,7 +27,7 @@
   &__btnAjouter {
     grid-row: 2 / 3;
     grid-column: 3 / 4;
-    height: 70px;
-    align-self:flex-end;
-    }
+    align-self: flex-end;
+    font-size: 0.8em;
   }
+}
