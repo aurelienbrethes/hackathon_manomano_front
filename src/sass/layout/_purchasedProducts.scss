@@ -3,7 +3,7 @@
   grid-template-columns: 15% 60% 10% 15%;
   margin: 15px 0;
   padding: 16px;
-  width: 50%;
+  width: 80%;
   background-color: white;
   border: 1px solid black;
   border-radius: 4px;
@@ -40,18 +40,22 @@
   }
 
   &__btn {
-    background-color: white;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-self: flex-end;
+  }
+}
 
+@media screen and (max-width: 1540px) {
+  .purchased-product {
     button {
-      height: 30px;
-      border-radius: 4px;
-      padding: 5px;
-      background-color: #ffb950;
-      color: black;
-      cursor: pointer;
+      font-size: 0.6rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1164px) {
+  .purchased-product {
+    button {
+      font-size: 0.4rem;
     }
   }
 }
