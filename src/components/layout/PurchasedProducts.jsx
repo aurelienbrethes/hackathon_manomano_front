@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import ProductsContext from "../../contexts/Products";
 
-const PurchasedProducts = ({ id_product, img, name, price }) => {
-  const { productsOnCart } = useContext(ProductsContext);
+
+const PurchasedProducts = ({ img, name, price, idProduct }) => {
+  const { addProductInCart } = useContext(ProductsContext);
 
   return (
     <div className="purchased-product">
@@ -16,17 +17,7 @@ const PurchasedProducts = ({ id_product, img, name, price }) => {
         <p>{price} € HT</p>
       </div>
       <div className="purchased-product__btn">
-        <button
-          className="buttonClass"
-          onClick={() => {
-            productsOnCart.push({
-              id_product,
-              img: img,
-              name: name,
-              price: price,
-            });
-          }}
-        >
+        <button onClick={() => addProductInCart(idProduct)}>
           Ajouter au panier
         </button>
       </div>
