@@ -12,9 +12,21 @@
     font-size: 2em;
   }
 
-  &__subtitle {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+  &__choice {
+    display: flex;
+    // flex-direction: row;
+    align-items: center;
+
+    select {
+      height: 30px;
+      margin-left: 10px;
+      width: 200px;
+    }
+
+    &-subtitle {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
   }
 
   &__headOrder {
@@ -60,5 +72,9 @@
     img {
       height: 4vh;
     }
+  }
+
+  select {
+    width : 100px;
   }
 }
