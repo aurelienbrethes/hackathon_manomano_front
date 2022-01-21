@@ -5,19 +5,13 @@ import Mpro from "../../ressources/mpro.png";
 import ProductsContext from "../../contexts/Products";
 
 const AllProducts = () => {
-  const { productsOnCart } = useContext(ProductsContext);
-  const [allItems, setAllItems] = useState([]);
+  const { products, setProducts, addProductInCart } =
+    useContext(ProductsContext);
 
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/products`)
-      .then((res) => setAllItems(res.data));
-  }, []);
-
-  useEffect(() => {
-    if (productsOnCart.length) {
-      console.log(productsOnCart.lenght);
-    }
+      .then((res) => setProducts(res.data));
   }, []);
 
   return (
@@ -37,44 +31,43 @@ const AllProducts = () => {
           alt="filters"
         />
         <div className="allProducts__body__list">
-          {allItems.map((item, index) => {
-            return (
-              <div className="allProducts__body__list__details" key={index}>
-                <div className="allProducts__body__list__details__picture">
-                  <img src={item.img} alt={item.name} />
-                </div>
-                <div className="allProducts__body__list__details__brand">
-                  {item.brand !== "" ? (
-                    <img src={item.brand} alt="marque" />
-                  ) : (
-                    ""
-                  )}
-                </div>
-                <div className="allProducts__body__list__details__name">
-                  <p>{item.name}</p>
-                </div>
-                <div className="allProducts__body__list__details__price">
-                  <div className="allProducts__body__list__details__price__HT">
-                    {item.price}
-                    <p>€00 HT</p>
+          {products &&
+            products.map((product, index) => {
+              return (
+                <div className="allProducts__body__list__details" key={index}>
+                  <div className="allProducts__body__list__details__picture">
+                    <img src={product.img} alt={product.name} />
                   </div>
-                  <div className="allProducts__body__list__details__price__TTC">
-                    {Math.round(item.price * 1.2)} € TTC
-                    <img src={Mpro} alt="Mpro" />
+                  <div className="allProducts__body__list__details__brand">
+                    {product.brand !== "" ? (
+                      <img src={product.brand} alt="marque" />
+                    ) : (
+                      ""
+                    )}
                   </div>
+                  <div className="allProducts__body__list__details__name">
+                    <p>{product.name}</p>
+                  </div>
+                  <div className="allProducts__body__list__details__price">
+                    <div className="allProducts__body__list__details__price__HT">
+                      {product.price}
+                      <p>€ HT</p>
+                    </div>
+                    <div className="allProducts__body__list__details__price__TTC">
+                      {Math.round(product.price * 1.2 * 100) / 100} € TTC
+                      <img src={Mpro} alt="Mpro" />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    className="allProducts__body__list__details__btnAddCart buttonClass"
+                    onClick={() => addProductInCart(product.id_product)}
+                  >
+                    Ajouter au panier
+                  </button>
                 </div>
-                <button
-                  type="button"
-                  className="allProducts__body__list__details__btnAddCart buttonClass"
-                  onClick={() => {
-                    productsOnCart.push({ ...item });
-                  }}
-                >
-                  Ajouter au panier
-                </button>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     </div>
