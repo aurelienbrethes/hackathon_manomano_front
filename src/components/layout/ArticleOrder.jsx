@@ -7,13 +7,11 @@ const ArticleOrder = ({ img, name, price }) => {
   return (
     <div className="articleOrder">
       <p className="articleOrder__livraisonState">Livrée</p>
-
       <p className="articleOrder__flecheDetails"></p>
-
       <img src={img} alt="Article" />
       <p className="articleOrder__name">{name}</p>
       <button
-        className="buttonClass"
+        className="articleOrder__btnAjouter buttonClass"
         onClick={() => {
           productsOnCart.push({
             img: img,

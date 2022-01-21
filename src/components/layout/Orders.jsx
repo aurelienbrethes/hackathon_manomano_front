@@ -11,8 +11,6 @@ const Orders = ({ img, name }) => {
   const [productsList, setProductsList] = useState([]);
   const [listNumber, setListNumber] = useState();
 
-  console.log(productsList);
-
   // Search all products from my order
 
   useEffect(() => {
@@ -60,7 +58,7 @@ const Orders = ({ img, name }) => {
 
         <div className="orders__facture">
           <img src={download} alt="Logo download" />
-          <p>Factures</p>
+          <p>Facture</p>
         </div>
       </div>
       <div className="orders__paiementContainer">
