@@ -6,6 +6,7 @@ import Mpro from "../../ressources/mpro.png";
 const AllProducts = () => {
   const [allItems, setAllItems] = useState([]);
 
+
   const productsOnCart = [];
 
   useEffect(() => {
@@ -13,9 +14,11 @@ const AllProducts = () => {
       .get(`http://localhost:8000/api/products`).then((res) => setAllItems(res.data));
   }, []);
 
+
   return (
     <div className="allProducts">
       <p className="allProducts__page">
+
         Accueil {" > "} Outillage {" > "} Outillage électroportatif {" > "}
         <b>Perceuse, visseuse, perforateur, burineur, marteau-piqueur</b>
       </p>
