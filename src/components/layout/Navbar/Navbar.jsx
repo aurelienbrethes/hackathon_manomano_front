@@ -38,7 +38,7 @@ const linkRightArray = [
   },
   {
     label: "PANIER",
-    path: "/panier",
+    path: "/cart",
     logo: panier,
     alt: "logo panier",
   },
