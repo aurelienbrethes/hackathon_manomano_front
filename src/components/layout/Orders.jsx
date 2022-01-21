@@ -7,22 +7,39 @@ import axios from "axios";
 const Orders = ({ img, name }) => {
   const { productsOnCart } = useContext(ProductsContext);
 
+  const [orderNumber, setOrderNumber] = useState(0);
   const [productsList, setProductsList] = useState([]);
-  console.log(productsList);
+
+  console.log(orderNumber)
+  console.log(productsList)
+
+  // Search all products from my order
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/orders`)
+      .get(`http://localhost:8000/api/orders/${orderNumber}/products`)
       .then((res) => setProductsList(res.data))
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [orderNumber]);
+
 
   return (
     <div className="orders">
       <h1 className="orders__title">Mes achats</h1>
-      <p className="orders__subtitle">Tous les produits achetés</p>
+      <div className="orders__choice">
+        <p className="orders__choice-subtitle">Tous les produits achetés</p>
+        <select id="id_order" onChange={(e) => setOrderNumber(e.target.value)}>
+          <option value="">Choisissez votre commande</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>    
       <div className="orders__headOrder">
         <div className="orders_dateContainer">
           <p className="orders__dateTitle">Commandé le</p>
@@ -59,7 +76,7 @@ const Orders = ({ img, name }) => {
       {productsList &&
         productsList.map((product) => (
           <ArticleOrder
-            key={product.id}
+            key={product.id_product}
             img={product.img}
             name={product.name}
           />
