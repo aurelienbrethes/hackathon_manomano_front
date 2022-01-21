@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
 import panier from "../../ressources/panier_logo.png";
 import paiements from "../../ressources/paiements.png";
 import CartProduct from "./CartProduct";
@@ -7,6 +8,8 @@ import ProductsContext from "../../contexts/Products";
 const Cart = () => {
   const { productsOnCart } = useContext(ProductsContext);
   const [total, setTotal] = useState(0);
+  console.log(productsOnCart);
+  const totalPrice = 41;
 
   useEffect(() => {
     if (productsOnCart.length) {
@@ -21,6 +24,22 @@ const Cart = () => {
     }
   }, [productsOnCart]);
 
+  const handleCreateOrder = () => {
+    axios
+      .post("http://localhost:8000/api/orders", {
+        total_price: totalPrice,
+        date: new Date(),
+      })
+      .then((order) => handleAddOrder(order.id_order, 2));
+  };
+
+  const handleAddOrder = (id_order, id_product) => {
+    axios.post(`http://localhost:8000/api/orders/${id_order}/products`, {
+      id_order: id_order,
+      id_product: id_product,
+    });
+  };
+
   return (
     <div className="cart">
       <div className="cart__left">
@@ -34,7 +53,7 @@ const Cart = () => {
             {productsOnCart && <p> 1 produit label</p>}
             <img src="" alt="" className="cart__products__pro" />
           </div>
-          <button className="cart__button">Editer un devis</button>
+          <button className="cart__button buttonClass">Editer un devis</button>
         </div>
         <div className="cart__map">
           {productsOnCart.length > 0 &&
@@ -65,7 +84,10 @@ const Cart = () => {
               </p>
               <p>{Math.round(total * 1.2 * 100) / 100} € TTC</p>
             </div>
-            <button className="cart__button cart__total__button">
+            <button
+              className="cart__button cart__total__button buttonClass"
+              onClick={() => handleCreateOrder()}
+            >
               Passer à la livraison
             </button>
           </div>
@@ -94,7 +116,9 @@ const Cart = () => {
           <p className="cart__total__line__title1">Total a payer TTC</p>
           <p>{Math.trunc((total * 1.2 + 4.9) * 100) / 100} €</p>
         </div>
-        <button className="cart__button">Passer à la livraison</button>
+        <button className="cart__button buttonClass">
+          Passer à la livraison
+        </button>
 
         <img src={paiements} alt="" />
       </div>

@@ -27,14 +27,7 @@
   &__btnAjouter {
     grid-row: 2 / 3;
     grid-column: 3 / 4;
-    justify-self: flex-end;
-    width: 10vw;
-    height: 4vh;
-    background-color: orange;
-    color: rgb(27, 27, 141);
-    border-radius: 10px;
-    margin-top: 8em;
-    font-size: 0.6em;
-    border: none;
+    height: 70px;
+    align-self:flex-end;
+    }
   }
-}

@@ -12,6 +12,8 @@ const MostPurchasedProducts = () => {
       .then((data) => setPurchasedProducts(data));
   }, []);
 
+  console.log(purchasedProducts);
+
   return (
     <div className="most-purchased-products">
       <div className="most-purchased-products__title">
@@ -29,6 +31,7 @@ const MostPurchasedProducts = () => {
           purchasedProducts.map((product, index) => (
             <PurchasedProducts
               key={index}
+              id_product={product.id_product}
               img={product.img}
               name={product.name}
               price={product.price}
