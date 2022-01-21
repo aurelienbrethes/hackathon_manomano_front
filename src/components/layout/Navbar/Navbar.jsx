@@ -6,6 +6,7 @@ import promos from "../../../ressources/promos_logo.png";
 import produit from "../../../ressources/produit_logo.png";
 import search from "../../../ressources/search.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const linkLeftArray = [
   {
@@ -38,6 +39,8 @@ const linkRightArray = [
 ];
 
 const Navbar = () => {
+  const [searchBar, setSearchBar] = useState("");
+  console.log(searchBar);
   return (
     <div className="navbar">
       <div className="navbar__top">
@@ -68,7 +71,12 @@ const Navbar = () => {
             ))}
         </ul>
         <div className="navbar__bottom-search">
-          <input type="text" value="Effectuer une recherche sur Manomano" />
+          <input
+            type="text"
+            placeholder="Effectuer une recherche sur Manomano"
+            defaultValue={searchBar}
+            onChange={(e) => setSearchBar(e.target.value)}
+          />
           <img src={search} alt="search logo" />
         </div>
         <ul className="navbar__bottom-list">
