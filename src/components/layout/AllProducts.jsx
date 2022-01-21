@@ -6,7 +6,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/products`)
+      .get(`http://localhost:8000/api/products`)
       .then((res) => setAllItems(res.data));
   }, []);
 
