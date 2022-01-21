@@ -31,6 +31,7 @@ const MostPurchasedProducts = () => {
           purchasedProducts.map((product, index) => (
             <PurchasedProducts
               key={index}
+              id_product={product.id_product}
               img={product.img}
               name={product.name}
               price={product.price}
