@@ -15,11 +15,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<AllProducts />} />
         <Route path="/orders" element={<Orders />} />
-
         <Route path="/cart" element={<Cart />} />
-
         <Route path="/favoris" element={<MostPurchasedProducts />} />
-        {/* <Routes path="/panier" element={<Basket/>} /> */}
       </Routes>
       <Footer />
     </div>
