@@ -1,4 +1,5 @@
 .orders {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   width: 75vw;
@@ -14,13 +15,20 @@
 
   &__choice {
     display: flex;
-    // flex-direction: row;
     align-items: center;
+    width: 100%;
 
     select {
-      height: 30px;
-      margin-left: 10px;
-      width: 200px;
+      height: 40px;
+      width: 30px;
+      margin-left: 300px;
+      border-radius: 4px;
+      font-size: 15px;
+
+      option {
+        font-size: 16px;
+        align-self: center;
+      }
     }
 
     &-subtitle {

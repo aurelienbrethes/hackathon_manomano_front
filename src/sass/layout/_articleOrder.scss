@@ -27,18 +27,7 @@
   &__btnAjouter {
     grid-row: 2 / 3;
     grid-column: 3 / 4;
-    justify-self: flex-end;
-    width: auto;
-    height: 4vh;
-    background-color: orange;
-    color: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin-top: 8em;
-    font-size: 0.6em;
-    border: none;
-    padding : 5px;
-    &:hover {
-      cursor: pointer;
+    height: 70px;
+    align-self:flex-end;
     }
   }
-}
