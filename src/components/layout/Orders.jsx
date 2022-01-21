@@ -7,17 +7,8 @@ import axios from "axios";
 const Orders = ({ img, name }) => {
   const { products, setProducts } = useContext(ProductsContext);
 
-  const [orderNumber, setOrderNumber] = useState();
+  const [orderNumber, setOrderNumber] = useState(0);
   const [listNumber, setListNumber] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/products`)
-      .then((res) => setProducts(res.data))
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [orderNumber]);
 
   useEffect(() => {
     axios
@@ -26,6 +17,17 @@ const Orders = ({ img, name }) => {
       .then((data) => setListNumber(data))
       .catch((err) => console.err(err));
   }, []);
+
+  // Search all products from my order
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/orders/${orderNumber}/products`)
+      .then((res) => setProducts(res.data))
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [orderNumber]);
 
   return (
     <div className="orders">
