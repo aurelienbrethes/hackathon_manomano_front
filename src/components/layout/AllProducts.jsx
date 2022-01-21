@@ -1,19 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Filters from "../../ressources/filter.png";
 import Mpro from "../../ressources/mpro.png";
+import ProductsContext from "../../contexts/Products";
 
 const AllProducts = () => {
+  const { productsOnCart } = useContext(ProductsContext);
   const [allItems, setAllItems] = useState([]);
-
-
-  const productsOnCart = [];
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/products`).then((res) => setAllItems(res.data));
+      .get(`http://localhost:8000/api/products`)
+      .then((res) => setAllItems(res.data));
   }, []);
 
+  useEffect(() => {
+    if (productsOnCart.length) {
+      console.log(
+        productsOnCart.lenght
+      );
+    }
+    // console.log(tototal);
+  }, []);
 
   return (
     <div className="allProducts">
