@@ -1,9 +1,16 @@
-import React, { useContext } from "react";
-import ProductsContext from "../../contexts/Products";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import PurchasedProducts from "./PurchasedProducts";
 
 const MostPurchasedProducts = () => {
-  const { products } = useContext(ProductsContext);
+  const [purchasedProducts, setPurchasedProducts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/purchased-products")
+      .then((result) => result.data)
+      .then((data) => setPurchasedProducts(data));
+  }, []);
 
   return (
     <div className="most-purchased-products">
@@ -11,7 +18,7 @@ const MostPurchasedProducts = () => {
         <h1>Mes produits les plus achetés</h1>
       </div>
       <div className="most-purchased-products__list">
-        {products.map((product, index) => (
+        {purchasedProducts.map((product, index) => (
           <PurchasedProducts
             key={index}
             img={product.img}
