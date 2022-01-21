@@ -24,7 +24,8 @@ export const ProductsContextProvider = ({ children }) => {
         (product) => product.id_product === idProduct
       );
       const updatedProductsOnCart = [...productsOnCart];
-      updatedProductsOnCart[position].quantity--;
+      updatedProductsOnCart[position].quantity = quantity;
+      console.log("New quantity : " + quantity);
       setProductsOnCart(updatedProductsOnCart);
     }
   };
@@ -46,7 +47,12 @@ export const ProductsContextProvider = ({ children }) => {
     }
     // Else, just add 1 to quantity
     else {
-      productsOnCart[position].quantity++;
+      const position = productsOnCart.findIndex(
+        (product) => product.id_product === idProduct
+      );
+      const updatedProductsOnCart = [...productsOnCart];
+      updatedProductsOnCart[position].quantity++;
+      setProductsOnCart(updatedProductsOnCart);
     }
   };
 
