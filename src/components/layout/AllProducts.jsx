@@ -16,16 +16,13 @@ const AllProducts = () => {
 
   useEffect(() => {
     if (productsOnCart.length) {
-      console.log(
-        productsOnCart.lenght
-      );
+      console.log(productsOnCart.lenght);
     }
   }, []);
 
   return (
     <div className="allProducts">
       <p className="allProducts__page">
-
         Accueil {" > "} Outillage {" > "} Outillage électroportatif {" > "}
         <b>Perceuse, visseuse, perforateur, burineur, marteau-piqueur</b>
       </p>
@@ -34,7 +31,11 @@ const AllProducts = () => {
       </p>
       <p className="allProducts__numberSearch">Plus de 500 produits trouvés</p>
       <div className="allProducts__body">
-        <img className="allProducts__body__filters" src={Filters} alt="filters"/>
+        <img
+          className="allProducts__body__filters"
+          src={Filters}
+          alt="filters"
+        />
         <div className="allProducts__body__list">
           {allItems.map((item, index) => {
             return (
@@ -62,8 +63,15 @@ const AllProducts = () => {
                     <img src={Mpro} alt="Mpro" />
                   </div>
                 </div>
-                <button type="button" className="allProducts__body__list__details__btnAddCart" 
-                onClick={() => {productsOnCart.push({...item})}}>Ajouter au panier</button>
+                <button
+                  type="button"
+                  className="allProducts__body__list__details__btnAddCart buttonClass"
+                  onClick={() => {
+                    productsOnCart.push({ ...item });
+                  }}
+                >
+                  Ajouter au panier
+                </button>
               </div>
             );
           })}
