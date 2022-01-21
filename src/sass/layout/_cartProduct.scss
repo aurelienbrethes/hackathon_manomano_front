@@ -28,7 +28,8 @@
 
   &__qtyprice {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
     &__spinner {
       display: flex;
       border: 1px solid rgba(112, 112, 112, 0.3);
@@ -36,6 +37,7 @@
       border-radius: 5px;
       height: 20px;
       padding: 0.5em;
+      margin-bottom: 1em;
       input[type="number"] {
         -moz-appearance: textfield;
         border: none;

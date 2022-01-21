@@ -4,7 +4,6 @@ import moins from "../../ressources/moins.png";
 
 const CartProduct = ({ name, price, img, quantity, setQuantity }) => {
   const [qte, setQte] = useState(0);
-  console.log(qte);
   return (
     <div className="cart-product">
       <div className="cart-product__main">
