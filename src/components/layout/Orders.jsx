@@ -12,7 +12,7 @@ const Orders = ({ img, name }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/products`)
+      .get(`http://localhost:8000/api/orders`)
       .then((res) => setProductsList(res.data))
       .catch((err) => {
         console.error(err);
@@ -44,7 +44,12 @@ const Orders = ({ img, name }) => {
         <button
           className="orders__btnAjouterTout"
           onClick={() => {
-            productsOnCart.push({ img: img, name: name });
+            productsOnCart.push({
+              img: img,
+              name: name,
+              quantity: 1,
+              price: 1,
+            });
           }}
         >
           Tout ajouter au panier
