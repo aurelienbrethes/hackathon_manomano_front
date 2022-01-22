@@ -1,3 +1,5 @@
+This project is a Hackathon's result of 48 hours. We had to find a way to improve the client's experience on the french marketplace ManoMano.fr. After a quick brainstorming, we chose to add a feature in the professional experiance. With our solution, a user can add easily to cart an order ever bought. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
